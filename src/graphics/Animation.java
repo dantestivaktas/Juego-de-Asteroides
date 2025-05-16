@@ -1,7 +1,6 @@
 package graphics;
 
 import java.awt.image.BufferedImage;
-
 import math.Vector2D;
 
 public class Animation {
@@ -46,9 +45,5 @@ public class Animation {
 	public BufferedImage getCurrentFrame(){
 		return frames[index];
 	}
-	
-	
-	
-	
-	
+
 }

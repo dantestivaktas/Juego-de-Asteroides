@@ -4,8 +4,6 @@ import javax.swing.filechooser.FileSystemView;
 
 public class Constants {
 	
-	// frame dimensions
-	
 	public static final int WIDTH = 1000;
 	public static final int HEIGHT = 600;
 	
@@ -49,28 +47,26 @@ public class Constants {
 	
 	public static final long UFO_SPAWN_RATE = 10000;
 	
-	public static final String PLAY = "PLAY";
+	public static final String PLAY = "JUGAR";
 	
-	public static final String EXIT = "EXIT";
+	public static final String EXIT = "SALIR";
 	
 	public static final int LOADING_BAR_WIDTH = 500;
 	public static final int LOADING_BAR_HEIGHT = 50;
 	
-	public static final String RETURN = "RETURN";
-	public static final String HIGH_SCORES = "HIGHEST SCORES";
+	public static final String RETURN = "VOLVER";
+	public static final String HIGH_SCORES = "MARCADORES";
 	
-	public static final String SCORE = "SCORE";
-	public static final String DATE = "DATE";
+	public static final String SCORE = "PUNTUACION";
+	public static final String DATE = "FECHA";
 	
 	public static final String SCORE_PATH = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() +
-			"\\Space_Ship_Game\\data.json"; // data.xml if you use XMLParser
+			"\\Juego_de_Asteroides\\data.json"; 
 	
-	// This variables are required to use XMLParser
 	
 	public static final String PLAYER = "PLAYER";
 	public static final String PLAYERS = "PLAYERS";
 	
-	// =============================================
 	
 	public static final long POWER_UP_DURATION = 10000;
 	public static final long POWER_UP_SPAWN_TIME = 8000;

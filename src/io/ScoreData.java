@@ -36,7 +36,5 @@ public class ScoreData {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	
-	
-	
+
 }

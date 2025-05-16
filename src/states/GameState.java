@@ -70,15 +70,14 @@ public class GameState extends State{
 		
 	}
 	
-	
 	public void addScore(int value, Vector2D position) {
 		
 		Color c = Color.WHITE;
-		String text = "+" + value + " score";
+		String text = "+" + value + " puntuacion";
 		if(player.isDoubleScoreOn()) {
 			c = Color.YELLOW;
 			value = value * 2;
-			text = "+" + value + " score" + " (X2)";
+			text = "+" + value + " puntuacion" + " (X2)";
 		}
 		
 		score += value;
@@ -123,7 +122,7 @@ public class GameState extends State{
 	private void startWave(){
 		
 		messages.add(new Message(new Vector2D(Constants.WIDTH/2, Constants.HEIGHT/2), false,
-				"WAVE "+waves, Color.WHITE, true, Assets.fontBig));
+				"Oleada "+waves, Color.WHITE, true, Assets.fontBig));
 		
 		double x, y;
 		

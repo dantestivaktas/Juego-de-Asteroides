@@ -64,11 +64,11 @@ public class LoadingState extends State{
 				Constants.LOADING_BAR_WIDTH,
 				Constants.LOADING_BAR_HEIGHT);
 		
-		Text.drawText(g2d, "SPACE SHIP GAME", new Vector2D(Constants.WIDTH / 2, Constants.HEIGHT / 2 - 50),
+		Text.drawText(g2d, "JUEGO DE ASTEROIDES PAF803_2", new Vector2D(Constants.WIDTH / 2, Constants.HEIGHT / 2 - 50),
 				true, Color.WHITE, font);
 		
 		
-		Text.drawText(g2d, "LOADING...", new Vector2D(Constants.WIDTH / 2, Constants.HEIGHT / 2 + 40),
+		Text.drawText(g2d, "CARGANDO...", new Vector2D(Constants.WIDTH / 2, Constants.HEIGHT / 2 + 40),
 				true, Color.WHITE, font);
 		
 	}

@@ -63,8 +63,6 @@ public class Button {
 				true,
 				Color.BLACK,
 				Assets.fontMed);
-		
-		
 	}
 	
 }

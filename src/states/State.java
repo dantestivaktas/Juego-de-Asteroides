@@ -11,7 +11,6 @@ public abstract class State {
 		currentState = newState;
 	}
 	
-	
 	public abstract void update(float dt);
 	public abstract void draw(Graphics g);
 	

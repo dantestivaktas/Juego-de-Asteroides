@@ -83,5 +83,4 @@ public class Vector2D {
 		this.y = y;
 	}
 	
-	
 }
