@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 
 public class Window extends JFrame implements Runnable{
 	
-	public static final int WIDTH = 800, HEIGHT = 600; // Tamaño de la ventana
-	private Canvas canvas; //Área de dibujo
+	public static final int WIDTH = 800, HEIGHT = 600; //Dimensiones de la ventana
+	private Canvas canvas;
 	private Thread thread; //Hilo para ejecutar el juego
-	private boolean running = false; //Flag para saber si el juego está corriendo
+	private boolean running = false;
 	
 	private BufferStrategy bs; // Estrategia de doble/triple buffer
 	private Graphics g; //Objeto para dibujar
@@ -36,7 +36,7 @@ public class Window extends JFrame implements Runnable{
 		canvas.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		canvas.setMaximumSize(new Dimension(WIDTH, HEIGHT));
 		canvas.setMinimumSize(new Dimension(WIDTH, HEIGHT)); 
-		canvas.setFocusable(true); // Permite que el canvas reciba eventos de teclado
+		canvas.setFocusable(true); // Permite que reciba entradas de teclado
 		
 		add(canvas); // Agrega el canvas al JFrame
 	}
@@ -51,10 +51,10 @@ public class Window extends JFrame implements Runnable{
 	}
 
 	private void draw(){
-		bs = canvas.getBufferStrategy(); // Obtiene la estrategia de buffer
+		bs = canvas.getBufferStrategy();
 		
 		if(bs == null){
-			canvas.createBufferStrategy(3); // Si no existe, crea una con triple buffer
+			canvas.createBufferStrategy(3);
 			return;
 		}
 		
@@ -63,10 +63,8 @@ public class Window extends JFrame implements Runnable{
 		//-----------------------
 		
 		g.clearRect(0, 0, WIDTH, HEIGHT); // Limpia la pantalla
-		
-		g.setColor(Color.BLACK); // Setea el color a negro
-		
-		g.drawString(""+AVERAGEFPS, 10, 20); // Dibuja el FPS en pantalla
+		g.setColor(Color.BLACK);
+		g.drawString(""+AVERAGEFPS, 10, 20); //Muestra los FPS en la pantalla
 		
 
 		g.dispose(); // Libera recursos del gráfico
@@ -83,36 +81,36 @@ public class Window extends JFrame implements Runnable{
 		while(running)
 		{
 			now = System.nanoTime(); // Tiempo actual
-			delta += (now - lastTime)/TARGETTIME; // Calcula cuántos updates deberían hacerse
-			time += (now - lastTime); // Acumula tiempo para medir los FPS
-			lastTime = now; // Actualiza el tiempo anterior
+			delta += (now - lastTime)/TARGETTIME;
+			time += (now - lastTime);
+			lastTime = now;
 			
 			if(delta >= 1){		
-				update(); // Actualiza lógica del juego
-				draw(); // Dibuja en pantalla
+				update();
+				draw();
 				delta --;
-				frames ++; // Cuenta el frame actual
+				frames ++;
 			}
                         
 			if(time >= 1000000000){
-				AVERAGEFPS = frames; // Calcula el FPS promedio cada segundo
+				AVERAGEFPS = frames;
 				frames = 0;
 				time = 0;
 			}
 		}
-		stop(); // Cuando termina el bucle, detiene el hilo
+		stop();
 	}
 	
 	private void start(){
-		thread = new Thread(this); // Crea un nuevo hilo con el método run
-		thread.start(); // Inicia el hilo
-		running = true; // Activa el flag de ejecución
+		thread = new Thread(this);
+		thread.start();
+		running = true;
 	}
         
 	private void stop(){
 		try {
-			thread.join(); // Espera que el hilo termine
-			running = false; // Marca que ya no está corriendo
+			thread.join();
+			running = false; 
 		} catch (InterruptedException e) {
 			e.printStackTrace(); // Muestra error si falla el join
 		}
